@@ -1,0 +1,19 @@
+:root {
+	--bg: #0f1724;
+	--panel: #111827;
+	--muted: #94a3b8;
+}
+
+:root.light {
+	--bg: #f8fafc;
+	--panel: #ffffff;
+	--muted: #475569;
+}
+
+/* small visual helpers for the app component */
+.stat-card { background: linear-gradient(180deg, rgba(99,102,241,0.06), rgba(99,102,241,0.02)); border: 1px solid rgba(148,163,184,0.06); }
+
+.github-icon { filter: drop-shadow(0 3px 8px rgba(2,6,23,0.6)); }
+
+/* make sure prose in markdown looks good in dark */
+.markdown-body { color: #e6eef8; }

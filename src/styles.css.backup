@@ -1,0 +1,377 @@
+/* Tailwind CSS - directives for base, components, and utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Premium Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* Custom animations and styles */
+@layer base {
+  :root {
+    --bg-primary: 255 255 255;
+    --bg-secondary: 249 250 251;
+    --bg-tertiary: 243 244 246;
+    --text-primary: 17 24 39;
+    --text-secondary: 75 85 99;
+    --text-tertiary: 156 163 175;
+    --border-color: 229 231 235;
+    --card-bg: 255 255 255;
+    --accent-primary: 99 102 241;
+    --accent-secondary: 139 92 246;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+  }
+
+  .dark {
+    --bg-primary: 3 7 18;
+    --bg-secondary: 15 23 42;
+    --bg-tertiary: 30 41 59;
+    --text-primary: 248 250 252;
+    --text-secondary: 203 213 225;
+    --text-tertiary: 148 163 184;
+    --border-color: 51 65 85;
+    --card-bg: 15 23 42;
+    --accent-primary: 129 140 248;
+    --accent-secondary: 167 139 250;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.5);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.5);
+  }
+
+  * {
+    @apply transition-colors duration-200;
+  }
+
+  body {
+    @apply min-h-screen font-['Inter',sans-serif] antialiased;
+    background: rgb(var(--bg-primary));
+    color: rgb(var(--text-primary));
+  }
+
+  .dark body {
+    background: linear-gradient(
+      135deg,
+      rgb(var(--bg-primary)) 0%,
+      rgb(var(--bg-secondary)) 50%,
+      rgb(var(--bg-primary)) 100%
+    );
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+  }
+}
+
+@layer components {
+  /* Premium Glassmorphism Cards */
+  .premium-card {
+    @apply p-6 rounded-xl transition-all duration-300;
+    background: rgba(var(--card-bg), 0.95);
+    border: 1px solid rgba(var(--border-color), 0.5);
+    backdrop-filter: blur(10px);
+  }
+
+  .premium-card:hover {
+    @apply shadow-lg transform -translate-y-1;
+    border-color: rgb(var(--accent-primary));
+  }
+
+  /* Floating animation */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Glow effect */
+  .glow {
+    box-shadow: 0 0 20px rgba(var(--accent-primary), 0.5),
+                0 0 40px rgba(var(--accent-secondary), 0.3);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, rgb(var(--accent-primary)), rgb(var(--accent-secondary)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Stat card */
+  .stat-card {
+    @apply premium-card text-center;
+    background: linear-gradient(135deg, rgba(var(--accent-primary), 0.1), rgba(var(--accent-secondary), 0.05));
+  }
+
+  /* Button styles */
+  .btn-premium {
+    @apply px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 active:scale-95;
+    background: linear-gradient(135deg, rgb(var(--accent-primary)), rgb(var(--accent-secondary)));
+    color: white;
+    box-shadow: 0 4px 15px rgba(var(--accent-primary), 0.4);
+  }
+
+  .btn-premium:hover {
+    box-shadow: 0 6px 25px rgba(var(--accent-primary), 0.6);
+  }
+
+  /* Repository card */
+  .repo-card {
+    @apply premium-card cursor-pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .repo-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(var(--accent-primary), 0.1), transparent);
+    transition: left 0.5s;
+  }
+
+  .repo-card:hover::before {
+    left: 100%;
+  }
+
+  /* Issue card enhanced */
+  .issue-card-premium {
+    @apply premium-card;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .issue-card-premium::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, rgb(var(--accent-primary)), rgb(var(--accent-secondary)));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  .issue-card-premium:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* Avatar with glow */
+  .avatar-premium {
+    @apply rounded-full border-2 transition-all duration-300;
+    border-color: rgba(var(--border-color), 0.3);
+  }
+
+  .avatar-premium:hover {
+    border-color: rgb(var(--accent-primary));
+    box-shadow: 0 0 20px rgba(var(--accent-primary), 0.4);
+  }
+
+  /* Badge styles */
+  .badge-premium {
+    @apply px-3 py-1 rounded-full text-xs font-semibold transition-all duration-300 hover:scale-110;
+  }
+
+  /* Input styles */
+  .input-premium {
+    @apply px-4 py-3 rounded-xl transition-all duration-300;
+    background: rgba(var(--card-bg), 0.8);
+    border: 2px solid rgba(var(--border-color), 0.3);
+    color: rgb(var(--text-primary));
+  }
+
+  .input-premium:focus {
+    outline: none;
+    border-color: rgb(var(--accent-primary));
+    box-shadow: 0 0 20px rgba(var(--accent-primary), 0.2);
+  }
+
+  /* Stat card enhanced */
+  .stat-card {
+    @apply p-6 rounded-xl transition-all duration-300;
+    background: rgba(var(--card-bg), 0.6);
+    border: 1px solid rgba(var(--border-color), 0.5);
+  }
+
+  .stat-card:hover {
+    @apply shadow-lg transform -translate-y-1;
+    border-color: rgb(var(--accent-primary));
+  }
+}
+
+@layer utilities {
+  /* Custom scrollbar premium */
+  .scrollbar-premium::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .scrollbar-premium::-webkit-scrollbar-track {
+    background: rgba(var(--bg-secondary), 0.5);
+    border-radius: 10px;
+  }
+
+  .scrollbar-premium::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, rgb(var(--accent-primary)), rgb(var(--accent-secondary)));
+    border-radius: 10px;
+  }
+
+  .scrollbar-premium::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, rgb(var(--accent-secondary)), rgb(var(--accent-primary)));
+  }
+
+  /* Text shadows */
+  .text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .text-shadow-md {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.5s ease-out;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-in;
+  }
+}
+
+/* Keyframe Animations */
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(var(--accent-primary), 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(var(--accent-primary), 0.8);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gradient-to-b from-blue-400 to-indigo-500 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply from-blue-500 to-indigo-600;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  @apply transition-colors duration-200;
+}
+
+/* GitHub icon animations */
+.github-icon {
+  @apply inline-block transform hover:rotate-12 transition-transform duration-300;
+}
+
+/* Markdown content styling */
+.markdown-body {
+  @apply prose prose-slate max-w-none;
+  @apply prose-headings:font-bold prose-headings:text-gray-900;
+  @apply prose-p:text-gray-700 prose-p:leading-relaxed;
+  @apply prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline;
+  @apply prose-code:bg-gray-100 prose-code:px-2 prose-code:py-1 prose-code:rounded prose-code:text-sm;
+  @apply prose-pre:bg-gray-900 prose-pre:text-gray-100 prose-pre:shadow-lg;
+  @apply prose-blockquote:border-l-4 prose-blockquote:border-blue-500 prose-blockquote:italic;
+  @apply prose-img:rounded-lg prose-img:shadow-md;
+}
+
+/* Loading spinner */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  @apply inline-block w-8 h-8 border-4 border-blue-200 border-t-blue-600 rounded-full;
+  animation: spin 1s linear infinite;
+}
+
+/* You can add global styles to this file, and also import other style files */
