@@ -602,6 +602,41 @@
   .animate-fade-in {
     animation: fade-in 0.3s ease-in;
   }
+
+  /* Mobile Optimizations */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Touch-friendly tap targets - ensure minimum 44x44px */
+  @media (max-width: 640px) {
+    button,
+    a {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+
+  /* Improve text readability on mobile */
+  @media (max-width: 640px) {
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+  }
+
+  /* Prevent zoom on input focus (iOS) */
+  @media (max-width: 640px) {
+    input[type="text"],
+    input[type="search"],
+    textarea {
+      font-size: 16px !important;
+    }
+  }
 }
 
 /* Keyframe Animations */
