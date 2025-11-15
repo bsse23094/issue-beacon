@@ -1,0 +1,184 @@
+<!-- User Commits Visualization -->
+<section class="relative min-h-screen py-12 overflow-hidden" style="background: var(--bg-primary);">
+  <!-- Background Orbs -->
+  <div class="absolute top-20 left-10 w-96 h-96 rounded-full blur-3xl opacity-30 float" 
+       style="background: radial-gradient(circle, rgba(6, 182, 212, 0.3) 0%, transparent 70%);"></div>
+  <div class="absolute bottom-20 right-10 w-80 h-80 rounded-full blur-3xl opacity-25 float" 
+       style="background: radial-gradient(circle, rgba(168, 85, 247, 0.3) 0%, transparent 70%); animation-delay: 2s;"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <!-- Page Header -->
+    <div class="text-center mb-12">
+      <h2 class="text-4xl sm:text-5xl font-bold mb-4 gradient-text font-display">
+        Commit Analytics
+      </h2>
+      <p class="text-lg max-w-2xl mx-auto text-gray-400">
+        Deep dive into commit patterns and contribution activity
+      </p>
+    </div>
+
+    <!-- Search Card -->
+    <div class="max-w-3xl mx-auto premium-card p-6 mb-10">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+        <div>
+          <label class="block text-sm font-semibold mb-2 text-cyan-400">Repository Owner</label>
+          <input [(ngModel)]="username" (keyup.enter)="loadCommits()" placeholder="e.g., torvalds"
+                 class="w-full px-4 py-3 rounded-lg font-mono text-sm"
+                 style="background: rgba(15, 20, 32, 0.8); border: 1px solid rgba(30, 41, 59, 0.6); color: var(--text-primary);"/>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold mb-2 text-purple-400">Repository Name</label>
+          <input [(ngModel)]="repo" (keyup.enter)="loadCommits()" placeholder="e.g., linux"
+                 class="w-full px-4 py-3 rounded-lg font-mono text-sm"
+                 style="background: rgba(15, 20, 32, 0.8); border: 1px solid rgba(30, 41, 59, 0.6); color: var(--text-primary);"/>
+        </div>
+      </div>
+      <button (click)="loadCommits()" 
+              class="w-full px-6 py-3.5 text-base font-bold rounded-lg transition-all duration-300 hover:scale-[1.02]"
+              style="background: linear-gradient(135deg, #06b6d4 0%, #a855f7 100%); color: white; box-shadow: 0 4px 20px rgba(6, 182, 212, 0.3);">
+        <span class="flex items-center justify-center gap-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+          Analyze Commits
+        </span>
+      </button>
+    </div>
+
+    <!-- Loading State -->
+    <div *ngIf="loading" class="flex flex-col items-center justify-center py-20">
+      <div class="spinner mb-6"></div>
+      <p class="text-xl font-semibold text-gray-400 animate-pulse">Analyzing commit history...</p>
+    </div>
+
+    <!-- Error State -->
+    <div *ngIf="error" class="premium-card mb-8 p-6 border-2 border-red-500/50" style="background: rgba(220, 38, 38, 0.1);">
+      <p class="text-red-400 font-semibold flex items-center gap-2">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+        </svg>
+        {{ error }}
+      </p>
+    </div>
+
+    <!-- Stats Dashboard - Modern & Sleek -->
+    <div *ngIf="!loading && !error && commits.length > 0" class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+      <div class="premium-card p-5 hover:scale-105 transition-all duration-300 group">
+        <div class="flex items-center justify-between mb-3">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background: rgba(34, 197, 94, 0.15);">
+            <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
+              <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="text-3xl font-bold text-white mb-1">{{ stats.totalCommits }}</div>
+        <div class="text-xs font-semibold text-green-400 uppercase tracking-wide">Total Commits</div>
+      </div>
+
+      <div class="premium-card p-5 hover:scale-105 transition-all duration-300 group">
+        <div class="flex items-center justify-between mb-3">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background: rgba(6, 182, 212, 0.15);">
+            <svg class="w-5 h-5 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="text-3xl font-bold text-white mb-1">{{ stats.thisWeek }}</div>
+        <div class="text-xs font-semibold text-cyan-400 uppercase tracking-wide">This Week</div>
+      </div>
+
+      <div class="premium-card p-5 hover:scale-105 transition-all duration-300 group">
+        <div class="flex items-center justify-between mb-3">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background: rgba(59, 130, 246, 0.15);">
+            <svg class="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="text-3xl font-bold text-white mb-1">{{ stats.thisMonth }}</div>
+        <div class="text-xs font-semibold text-blue-400 uppercase tracking-wide">This Month</div>
+      </div>
+
+      <div class="premium-card p-5 hover:scale-105 transition-all duration-300 group">
+        <div class="flex items-center justify-between mb-3">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background: rgba(168, 85, 247, 0.15);">
+            <svg class="w-5 h-5 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="text-3xl font-bold text-white mb-1">{{ stats.avgPerDay }}</div>
+        <div class="text-xs font-semibold text-purple-400 uppercase tracking-wide">Avg/Day</div>
+      </div>
+    </div>
+
+    <!-- Visualizations Grid -->
+    <div *ngIf="!loading && !error && commitStats.length > 0" class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+      <!-- Main Chart - 2 columns -->
+      <div class="lg:col-span-2 premium-card p-6">
+        <div class="flex items-center justify-between mb-6">
+          <h3 class="text-xl font-bold text-white font-display">Activity Timeline</h3>
+          <span class="text-xs text-gray-400 font-mono">Last 30 Days</span>
+        </div>
+        <canvas #commitChart class="w-full" style="height: 240px;"></canvas>
+      </div>
+
+      <!-- Frequency Heatmap - 1 column -->
+      <div class="premium-card p-6">
+        <h3 class="text-xl font-bold text-white mb-6 font-display">Commit Frequency</h3>
+        <canvas #frequencyChart class="w-full" style="height: 240px;"></canvas>
+      </div>
+    </div>
+
+    <!-- Commits List - Clean & Minimal -->
+    <div *ngIf="!loading && !error && commits.length > 0" class="space-y-6">
+      <div class="flex items-center justify-between mb-8">
+        <h3 class="text-2xl font-bold text-white font-display">Recent Activity</h3>
+        <span class="text-sm text-gray-400">{{ commits.length }} commits</span>
+      </div>
+      
+      <article *ngFor="let commit of commits; let i = index"
+               (click)="openCommit(commit)"
+               class="premium-card cursor-pointer group hover:scale-[1.01] transition-all duration-200 p-8">
+        <!-- Title -->
+        <h4 class="text-lg font-semibold mb-6 text-white line-clamp-2 group-hover:text-cyan-400 transition-colors leading-relaxed">
+          {{ commit.commit.message.split('\n')[0] }}
+        </h4>
+        
+        <!-- Metadata Row -->
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-8">
+            <!-- Author -->
+            <div class="flex items-center gap-3">
+              <img *ngIf="commit.author" [src]="commit.author.avatar_url" [alt]="commit.author.login"
+                   class="w-10 h-10 rounded-full border-2 border-cyan-500/30 group-hover:border-cyan-400/60 transition-colors"/>
+              <div class="flex flex-col">
+                <span class="text-sm font-medium text-gray-300">{{ commit.author?.login || commit.commit.author.name }}</span>
+                <span class="text-xs text-gray-500">Author</span>
+              </div>
+            </div>
+            
+            <!-- Time -->
+            <div class="flex flex-col">
+              <span class="text-sm font-medium text-gray-300">{{ getRelativeTime(commit.commit.author.date) }}</span>
+              <span class="text-xs text-gray-500">Committed</span>
+            </div>
+            
+            <!-- SHA -->
+            <div class="hidden md:flex flex-col">
+              <span class="text-sm font-mono text-gray-300">{{ commit.sha.substring(0, 7) }}</span>
+              <span class="text-xs text-gray-500">Commit Hash</span>
+            </div>
+          </div>
+
+          <!-- Arrow -->
+          <svg class="w-6 h-6 text-gray-600 group-hover:text-cyan-400 group-hover:translate-x-2 transition-all flex-shrink-0" 
+               fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

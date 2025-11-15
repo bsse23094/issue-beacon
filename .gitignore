@@ -41,3 +41,7 @@ testem.log
 .DS_Store
 Thumbs.db
 .vercel
+
+# Environment files with tokens
+/src/environments/environment.ts
+/src/environments/environment.prod.ts

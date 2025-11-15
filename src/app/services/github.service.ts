@@ -50,19 +50,50 @@ export class GithubService {
 
     const url = `${this.baseUrl}/repos/${owner}/${repo}/issues`;
 
-    return this.http.get<Issue[]>(url, { params, observe: 'response' }).pipe(
-      map((response: HttpResponse<Issue[]>) => ({
-        issues: response.body || [],
-        links: this.parseLinkHeader(response.headers.get('Link'))
-      })),
+    console.log('Fetching issues from:', url);
+    console.log('With params:', params.toString());
+
+    // Build headers
+    const headers: any = {
+      'Accept': 'application/vnd.github.v3+json'
+    };
+
+    // Add authorization token if available
+    if (environment.githubToken) {
+      headers['Authorization'] = `token ${environment.githubToken}`;
+    }
+
+    return this.http.get<Issue[]>(url, { 
+      params, 
+      observe: 'response',
+      headers
+    }).pipe(
+      map((response: HttpResponse<Issue[]>) => {
+        console.log('Successfully fetched issues:', response.body?.length);
+        return {
+          issues: response.body || [],
+          links: this.parseLinkHeader(response.headers.get('Link'))
+        };
+      }),
       tap(({ issues }) => {
         // Cache issues in IndexedDB
         if (issues.length > 0) {
-          this.db.cacheIssues(owner, repo, issues).catch(console.error);
+          this.db.cacheIssues(owner, repo, issues).catch(err => {
+            console.error('Failed to cache issues:', err);
+          });
         }
       }),
       catchError(error => {
         console.error('Error fetching issues:', error);
+        console.error('Error status:', error.status);
+        console.error('Error message:', error.message);
+        
+        if (error.status === 403) {
+          console.warn('⚠️ GitHub API rate limit exceeded!');
+          console.warn('💡 Solution: Add a GitHub Personal Access Token in environment.ts');
+          console.warn('📝 Get one at: https://github.com/settings/tokens');
+        }
+        
         // Try to return cached data on error
         return this.getCachedIssues(owner, repo);
       })
@@ -148,4 +179,130 @@ export class GithubService {
 
     return links;
   }
+
+  /**
+   * Get commits for a repository
+   */
+  getCommits(
+    owner: string,
+    repo: string,
+    options: {
+      sha?: string;
+      path?: string;
+      author?: string;
+      since?: string;
+      until?: string;
+      per_page?: number;
+      page?: number;
+    } = {}
+  ): Observable<any[]> {
+    let params = new HttpParams();
+    
+    if (options.sha) params = params.set('sha', options.sha);
+    if (options.path) params = params.set('path', options.path);
+    if (options.author) params = params.set('author', options.author);
+    if (options.since) params = params.set('since', options.since);
+    if (options.until) params = params.set('until', options.until);
+    if (options.per_page) params = params.set('per_page', options.per_page.toString());
+    if (options.page) params = params.set('page', options.page.toString());
+
+    const url = `${this.baseUrl}/repos/${owner}/${repo}/commits`;
+
+    return this.http.get<any[]>(url, { params }).pipe(
+      catchError(error => {
+        console.error('Error fetching commits:', error);
+        return throwError(() => new Error('Failed to fetch commits'));
+      })
+    );
+  }
+
+  /**
+   * Get repository stats
+   */
+  getRepoStats(owner: string, repo: string): Observable<any> {
+    const url = `${this.baseUrl}/repos/${owner}/${repo}`;
+    
+    return this.http.get<any>(url).pipe(
+      catchError(error => {
+        console.error('Error fetching repo stats:', error);
+        return throwError(() => new Error('Failed to fetch repository stats'));
+      })
+    );
+  }
+
+  /**
+   * Get languages used in a repository
+   */
+  getRepoLanguages(owner: string, repo: string): Observable<any> {
+    const url = `${this.baseUrl}/repos/${owner}/${repo}/languages`;
+    
+    return this.http.get<any>(url).pipe(
+      catchError(error => {
+        console.error('Error fetching repo languages:', error);
+        return throwError(() => new Error('Failed to fetch repository languages'));
+      })
+    );
+  }
+
+  /**
+   * Get contributors for a repository
+   */
+  getContributors(owner: string, repo: string): Observable<any[]> {
+    const url = `${this.baseUrl}/repos/${owner}/${repo}/contributors`;
+    
+    return this.http.get<any[]>(url, { params: new HttpParams().set('per_page', '100') }).pipe(
+      catchError(error => {
+        console.error('Error fetching contributors:', error);
+        return throwError(() => new Error('Failed to fetch contributors'));
+      })
+    );
+  }
+
+  /**
+   * Get a user's public profile
+   */
+  getUser(username: string): Observable<any> {
+    const url = `${this.baseUrl}/users/${username}`;
+
+    return this.http.get<any>(url).pipe(
+      catchError(error => {
+        console.error('Error fetching user:', error);
+        return throwError(() => new Error(`Failed to load profile for ${username}`));
+      })
+    );
+  }
+
+  /**
+   * Get a user's repositories (paginated)
+   */
+  getUserRepos(username: string, page = 1, per_page = 100): Observable<any[]> {
+    const url = `${this.baseUrl}/users/${username}/repos`;
+    const params = new HttpParams()
+      .set('per_page', per_page.toString())
+      .set('page', page.toString())
+      .set('sort', 'updated');
+
+    return this.http.get<any[]>(url, { params }).pipe(
+      catchError(error => {
+        console.error('Error fetching user repositories:', error);
+        return throwError(() => new Error(`Failed to load repositories for ${username}`));
+      })
+    );
+  }
+
+  /**
+   * Get recent public events for a user (used to approximate activity)
+   */
+  getUserEvents(username: string, per_page = 100): Observable<any[]> {
+    const url = `${this.baseUrl}/users/${username}/events`;
+    const params = new HttpParams().set('per_page', Math.min(per_page, 100).toString());
+
+    return this.http.get<any[]>(url, { params }).pipe(
+      catchError(error => {
+        console.error('Error fetching user events:', error);
+        return throwError(() => new Error(`Failed to load activity for ${username}`));
+      })
+    );
+  }
 }
+

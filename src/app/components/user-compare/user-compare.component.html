@@ -1,0 +1,155 @@
+<section class="compare-section relative overflow-hidden">
+  <div class="compare-gradient"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
+    <div class="text-center mb-12">
+      <p class="text-sm uppercase tracking-[0.4em] text-cyan-300/80 mb-3">Head-to-head insights</p>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Compare two GitHub creators</h1>
+      <p class="text-base sm:text-lg text-gray-400 max-w-3xl mx-auto">
+        Track language preferences, repository influence, and recent commit activity with a single glance.
+      </p>
+      <div class="flex flex-wrap gap-3 justify-center mt-6">
+        <span class="comparison-pill">Languages</span>
+        <span class="comparison-pill">Stars &amp; forks</span>
+        <span class="comparison-pill">Followers</span>
+        <span class="comparison-pill">Recent commits</span>
+      </div>
+    </div>
+
+    <div class="glass-card compare-form rounded-2xl p-6 sm:p-8 mb-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="input-label">First GitHub user</label>
+          <input class="input-premium w-full" [(ngModel)]="userA" name="userA" placeholder="e.g. torvalds" />
+          <p class="helper-text">User A</p>
+        </div>
+        <div>
+          <label class="input-label">Second GitHub user</label>
+          <input class="input-premium w-full" [(ngModel)]="userB" name="userB" placeholder="e.g. gaearon" />
+          <p class="helper-text">User B</p>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-4 mt-6">
+        <button class="btn-primary" (click)="compareUsers()" [disabled]="loading">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 16a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H4a1 1 0 01-1-1v-4zM15 4a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1V4zM15 16a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z" />
+          </svg>
+          <span>Compare profiles</span>
+        </button>
+        <button class="btn-ghost" type="button" (click)="swapUsers()" [disabled]="loading">
+          Swap users
+        </button>
+      </div>
+    </div>
+
+    <div *ngIf="error" class="glass-card glass-alert glass-alert--danger rounded-2xl p-6 mb-8 text-sm sm:text-base">
+      {{ error }}
+    </div>
+
+    <div *ngIf="loading" class="flex flex-col items-center justify-center py-16 gap-4">
+      <div class="spinner"></div>
+      <p class="text-gray-400 font-semibold">Fetching GitHub data...</p>
+    </div>
+
+    <div *ngIf="!loading && hasResults()" class="space-y-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="compare-card" *ngFor="let slot of compareOrder">
+          <ng-container *ngIf="results[slot] as user">
+            <div class="flex items-center gap-4">
+              <div class="avatar-glow">
+                <img [src]="user.profile.avatar_url" [alt]="user.profile.login" />
+              </div>
+              <div>
+                <p class="text-xs uppercase tracking-[0.2em] text-cyan-300/80">User {{ slot | uppercase }}</p>
+                <h3 class="text-2xl font-bold text-white">{{ user.profile.name || user.profile.login }}</h3>
+                <p class="text-cyan-200 font-mono text-sm">{{ '@' + user.profile.login }}</p>
+              </div>
+            </div>
+
+            <p class="text-sm text-gray-400 mt-4" *ngIf="user.profile.bio">{{ user.profile.bio }}</p>
+
+            <div class="grid grid-cols-2 gap-4 mt-6 text-sm">
+              <div class="stat-chip">
+                <span>Followers</span>
+                <strong>{{ user.profile.followers | number }}</strong>
+              </div>
+              <div class="stat-chip">
+                <span>Following</span>
+                <strong>{{ user.profile.following | number }}</strong>
+              </div>
+              <div class="stat-chip">
+                <span>Public repos</span>
+                <strong>{{ user.profile.public_repos | number }}</strong>
+              </div>
+              <div class="stat-chip">
+                <span>Impact score</span>
+                <strong>{{ user.impactScore | number }}</strong>
+              </div>
+            </div>
+
+            <div class="mt-8">
+              <div class="flex items-center justify-between mb-2">
+                <h4 class="text-sm font-semibold text-white tracking-wide uppercase">Top languages</h4>
+                <span class="text-xs text-gray-400">{{ getDominantLanguage(slot) }}</span>
+              </div>
+              <div *ngIf="user.topLanguages.length; else noLanguages" class="space-y-3">
+                <div *ngFor="let lang of user.topLanguages" class="language-pill">
+                  <div class="flex items-center justify-between text-xs uppercase tracking-wide">
+                    <span>{{ lang.name }}</span>
+                    <span>{{ lang.percentage }}%</span>
+                  </div>
+                  <div class="language-progress">
+                    <span class="language-progress-bar" [style.width.%]="lang.percentage" [style.background]="lang.color"></span>
+                  </div>
+                </div>
+              </div>
+              <ng-template #noLanguages>
+                <p class="text-xs text-gray-500">No dominant languages found.</p>
+              </ng-template>
+            </div>
+
+            <div class="mt-8">
+              <h4 class="text-sm font-semibold text-white tracking-wide uppercase mb-3">Top repositories</h4>
+              <div class="space-y-3" *ngIf="user.topRepos.length; else noRepos">
+                <a *ngFor="let repo of user.topRepos" [href]="repo.url" target="_blank" rel="noopener" class="repo-pill">
+                  <div>
+                    <p class="text-white font-semibold">{{ repo.name }}</p>
+                    <p class="text-xs text-gray-400">{{ repo.language || '—' }}</p>
+                  </div>
+                  <div class="flex items-center gap-3 text-xs text-gray-300">
+                    <span>⭐ {{ repo.stargazers | number }}</span>
+                    <span>🍴 {{ repo.forks | number }}</span>
+                  </div>
+                </a>
+              </div>
+              <ng-template #noRepos>
+                <p class="text-xs text-gray-500">No repositories available.</p>
+              </ng-template>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+
+      <div class="glass-card comparison-matrix rounded-2xl p-6 sm:p-8">
+        <div class="grid grid-cols-3 text-xs sm:text-sm uppercase tracking-[0.3em] text-gray-500 mb-4">
+          <div class="text-left">{{ results.a?.profile.login }}</div>
+          <div class="text-center text-gray-400 tracking-[0.2em]">Metric</div>
+          <div class="text-right">{{ results.b?.profile.login }}</div>
+        </div>
+        <div *ngFor="let metric of comparisonMetrics" class="grid grid-cols-3 items-center gap-3 py-4 border-t border-white/5">
+          <div class="metric-value text-left" [ngClass]="{ 'winner': isLeader('a', metric.key) }">
+            {{ getMetricValue('a', metric.key) | number }}
+          </div>
+          <div class="text-center text-[11px] sm:text-xs text-gray-400 uppercase tracking-[0.3em]">
+            {{ metric.label }}
+            <div class="text-[10px] text-cyan-300" *ngIf="metric.key !== 'impactScore'">
+              Δ {{ getMetricDelta(metric.key) | number }}
+            </div>
+          </div>
+          <div class="metric-value text-right" [ngClass]="{ 'winner': isLeader('b', metric.key) }">
+            {{ getMetricValue('b', metric.key) | number }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

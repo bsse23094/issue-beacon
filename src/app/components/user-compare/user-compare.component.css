@@ -1,0 +1,185 @@
+.compare-section {
+  background: radial-gradient(circle at top, rgba(6, 182, 212, 0.1), transparent 60%),
+              radial-gradient(circle at bottom, rgba(168, 85, 247, 0.12), transparent 70%),
+              var(--bg-primary);
+}
+
+.compare-gradient {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, rgba(6, 182, 212, 0.12), transparent 50%),
+              radial-gradient(circle at 80% 30%, rgba(168, 85, 247, 0.1), transparent 45%);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.comparison-pill {
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+}
+
+.compare-form .btn-primary,
+.compare-form .btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  padding: 0.85rem 1.5rem;
+  border-radius: 0.9rem;
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(168, 85, 247, 0.25));
+  border: 1px solid rgba(6, 182, 212, 0.4);
+  color: var(--text-primary);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(6, 182, 212, 0.25);
+}
+
+.btn-primary:disabled,
+.btn-ghost:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-ghost {
+  padding: 0.85rem 1.5rem;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.input-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 0.35rem;
+}
+
+.helper-text {
+  margin-top: 0.35rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.compare-card {
+  background: rgba(15, 20, 32, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  backdrop-filter: blur(24px) saturate(180%);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+}
+
+.avatar-glow {
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  padding: 0.2rem;
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.5), rgba(168, 85, 247, 0.4));
+  box-shadow: 0 10px 30px rgba(6, 182, 212, 0.25);
+}
+
+.avatar-glow img {
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 2px solid rgba(10, 14, 26, 0.7);
+}
+
+.stat-chip {
+  border-radius: 0.85rem;
+  padding: 0.9rem 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  color: var(--text-secondary);
+}
+
+.stat-chip strong {
+  font-size: 1.35rem;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.language-pill {
+  padding: 0.75rem 0.25rem 0.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.language-progress {
+  position: relative;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+  margin-top: 0.35rem;
+}
+
+.language-progress-bar {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(6, 182, 212, 0.35);
+}
+
+.repo-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.1rem;
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.repo-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(6, 182, 212, 0.15);
+}
+
+.comparison-matrix .metric-value {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.comparison-matrix .metric-value.winner {
+  color: var(--text-primary);
+  text-shadow: 0 0 20px rgba(6, 182, 212, 0.25);
+}
+
+@media (max-width: 768px) {
+  .compare-card {
+    padding: 1.5rem;
+  }
+
+  .comparison-matrix .metric-value {
+    font-size: 1.2rem;
+  }
+}

@@ -6,11 +6,12 @@ import { ParticleNetwork } from './particle-network';
 
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterLink, RouterLinkActive, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
@@ -75,7 +76,8 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.theme.init();
+    // Force dark mode only
+    this.theme.setDarkMode(true);
     this.loadIssues();
   }
 
@@ -124,10 +126,6 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
   onSortChange(): void {
     this.loadIssues();
-  }
-
-  toggleTheme(): void {
-    this.theme.toggle();
   }
 
   getRelativeTime(dateString: string): string {

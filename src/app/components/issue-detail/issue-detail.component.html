@@ -1,92 +1,88 @@
-<div class="min-h-screen">
+<div class="min-h-screen" style="background: var(--bg-primary);">
   <!-- Hero Header -->
-  <header class="gradient-bg relative overflow-hidden">
-    <div class="absolute inset-0 bg-black/10"></div>
-    <div class="absolute top-10 right-10 w-64 h-64 bg-white/10 rounded-full blur-3xl float"></div>
+  <header class="relative overflow-hidden" style="background: linear-gradient(135deg, rgba(10, 14, 26, 0.95) 0%, rgba(15, 20, 32, 0.98) 100%);">
+    <div class="absolute inset-0" style="background: rgba(0, 0, 0, 0.3);"></div>
     
-    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <a routerLink="/" class="inline-flex items-center gap-2 text-white/90 hover:text-white font-semibold mb-6 transform hover:translate-x-1 transition-all group">
+    <!-- Animated Orbs -->
+    <div class="absolute top-10 right-10 w-64 h-64 rounded-full blur-3xl float" 
+         style="background: radial-gradient(circle, rgba(6, 182, 212, 0.3) 0%, rgba(6, 182, 212, 0.1) 50%, transparent 80%);"></div>
+    <div class="absolute bottom-10 left-10 w-56 h-56 rounded-full blur-3xl float" 
+         style="background: radial-gradient(circle, rgba(168, 85, 247, 0.25) 0%, rgba(168, 85, 247, 0.1) 60%, transparent 90%); animation-delay: 2s;"></div>
+    
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <a routerLink="/" class="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-semibold mb-6 transform hover:translate-x-1 transition-all group">
         <svg class="w-5 h-5 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
         </svg>
-        Back to issues
+        Back to Issues
       </a>
-      <h1 class="text-4xl font-extrabold text-white drop-shadow-lg">Issue Details</h1>
-    </div>
-
-    <!-- Wave separator -->
-    <div class="absolute bottom-0 left-0 right-0">
-      <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 0L60 10C120 20 240 40 360 46.7C480 53 600 47 720 43.3C840 40 960 40 1080 46.7C1200 53 1320 67 1380 73.3L1440 80V60H1380C1320 60 1200 60 1080 60C960 60 840 60 720 60C600 60 480 60 360 60C240 60 120 60 60 60H0V0Z" fill="#F8FAFC"/>
-      </svg>
+      <h1 class="text-4xl font-extrabold text-white drop-shadow-lg font-display">Issue Details</h1>
     </div>
   </header>
 
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 -mt-8 relative z-10">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
     <!-- Loading State -->
     <div *ngIf="loading" class="flex flex-col items-center justify-center py-20">
       <div class="spinner mb-4"></div>
-      <p class="text-gray-600 font-medium animate-pulse">Loading issue details...</p>
+      <p class="text-gray-400 font-medium animate-pulse">Loading issue details...</p>
     </div>
 
     <!-- Error State -->
-    <div *ngIf="error" class="glass-card rounded-2xl p-8 mb-6 bg-red-50 border-2 border-red-200">
+  <div *ngIf="error" class="glass-card glass-alert glass-alert--danger rounded-2xl p-8 mb-6">
       <div class="flex items-center gap-3">
-        <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+        <svg class="w-6 h-6 text-red-400" fill="currentColor" viewBox="0 0 20 20">
           <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
         </svg>
-        <p class="text-red-800 font-semibold">{{ error }}</p>
+        <p class="text-red-300 font-semibold">{{ error }}</p>
       </div>
     </div>
 
     <!-- Issue Content -->
     <div *ngIf="!loading && issue" class="space-y-6">
       <!-- Issue Header Card -->
-      <div class="glass-card rounded-2xl p-8 transform hover:scale-[1.01] transition-transform duration-300">
+      <div class="premium-card rounded-2xl p-8 hover:shadow-2xl transition-all duration-300">
         <div class="flex items-start gap-6 mb-6">
           <!-- State Icon -->
           <div [class]="'w-16 h-16 rounded-2xl flex items-center justify-center text-3xl flex-shrink-0 ' + 
-                       (issue.state === 'open' ? 'bg-green-100 text-green-600' : 'bg-purple-100 text-purple-600')">
+                       (issue.state === 'open' ? 'bg-green-500/20 text-green-400' : 'bg-purple-500/20 text-purple-400')">
             <span *ngIf="issue.state === 'open'">●</span>
             <span *ngIf="issue.state === 'closed'">✓</span>
           </div>
           
           <div class="flex-1">
             <div class="flex items-start justify-between gap-4 mb-4">
-              <h2 class="text-3xl font-extrabold text-gray-900">
+              <h2 class="text-3xl font-extrabold text-white font-display">
                 {{ issue.title }}
               </h2>
-              <span class="text-gray-400 font-mono text-lg font-bold flex-shrink-0">#{{ issue.number }}</span>
+              <span class="text-gray-500 font-mono text-lg font-bold flex-shrink-0">#{{ issue.number }}</span>
             </div>
             
             <!-- State Badge -->
-            <span [class]="'inline-flex items-center px-4 py-2 rounded-full text-sm font-bold shadow-md ' + 
-                          (issue.state === 'open' ? 'bg-green-100 text-green-800' : 'bg-purple-100 text-purple-800')">
-              <span class="mr-2" *ngIf="issue.state === 'open'">🟢</span>
-              <span class="mr-2" *ngIf="issue.state === 'closed'">🟣</span>
+            <span [class]="'inline-flex items-center px-4 py-2 rounded-full text-sm font-bold ' + 
+                          (issue.state === 'open' ? 'bg-green-500/20 text-green-400 border border-green-500/30' : 'bg-purple-500/20 text-purple-400 border border-purple-500/30')">
               {{ issue.state === 'open' ? 'Open' : 'Closed' }}
             </span>
           </div>
         </div>
 
         <!-- Meta Info -->
-        <div class="flex flex-wrap items-center gap-6 text-sm mb-6 pb-6 border-b border-gray-200">
+        <div class="flex flex-wrap items-center gap-6 text-sm mb-6 pb-6 border-b border-gray-800">
           <div class="flex items-center gap-3">
-            <img [src]="issue.user.avatar_url" [alt]="issue.user.login" class="w-10 h-10 rounded-full ring-4 ring-white shadow-lg">
+            <img [src]="issue.user.avatar_url" [alt]="issue.user.login" class="w-10 h-10 rounded-full ring-2 ring-cyan-500/50 shadow-lg">
             <div>
-              <div class="font-bold text-gray-900">{{ issue.user.login }}</div>
+              <div class="font-bold text-white">{{ issue.user.login }}</div>
               <div class="text-gray-500 text-xs">Author</div>
             </div>
           </div>
           
-          <div class="flex items-center gap-2 text-gray-600">
+          <div class="flex items-center gap-2 text-gray-400">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
             </svg>
             <span>opened {{ getRelativeTime(issue.created_at) }}</span>
           </div>
           
-          <div *ngIf="issue.comments > 0" class="flex items-center gap-2 font-bold text-blue-600">
+          <div *ngIf="issue.comments > 0" class="flex items-center gap-2 font-bold text-cyan-400">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd"></path>
             </svg>
@@ -98,23 +94,24 @@
         <div *ngIf="issue.labels.length > 0" class="flex flex-wrap gap-2">
           <span
             *ngFor="let label of issue.labels"
-            class="label-badge"
-            [style.background-color]="'#' + label.color"
-            [style.color]="getContrastColor(label.color)"
+            class="label inline-flex items-center px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 hover:scale-105"
+            [style.background]="'rgba(' + hexToRgb(label.color) + ', 0.15)'"
+            [style.border]="'1px solid rgba(' + hexToRgb(label.color) + ', 0.35)'"
+            [style.color]="'#' + label.color"
           >
-            🏷️ {{ label.name }}
+            {{ label.name }}
           </span>
         </div>
       </div>
 
       <!-- Issue Body Card -->
-      <div class="glass-card rounded-2xl overflow-hidden">
-        <div class="bg-gradient-to-r from-blue-500/10 to-purple-500/10 px-8 py-4 border-b border-gray-200">
+      <div class="premium-card rounded-2xl overflow-hidden">
+        <div class="px-8 py-4 border-b border-gray-800" style="background: rgba(6, 182, 212, 0.05);">
           <div class="flex items-center gap-4">
-            <img [src]="issue.user.avatar_url" [alt]="issue.user.login" class="w-12 h-12 rounded-full ring-4 ring-white shadow-lg">
+            <img [src]="issue.user.avatar_url" [alt]="issue.user.login" class="w-10 h-10 rounded-full ring-2 ring-cyan-500/50 shadow-lg">
             <div>
-              <div class="font-bold text-gray-900 text-lg">{{ issue.user.login }}</div>
-              <div class="text-sm text-gray-600">commented {{ getRelativeTime(issue.created_at) }}</div>
+              <div class="font-bold text-white text-base">{{ issue.user.login }}</div>
+              <div class="text-sm text-gray-400">commented {{ getRelativeTime(issue.created_at) }}</div>
             </div>
           </div>
         </div>
@@ -122,12 +119,12 @@
         <div class="p-8">
           <div 
             *ngIf="renderedBody; else noBody" 
-            class="markdown-body prose-lg"
+            class="markdown-body prose-invert max-w-none"
             [innerHTML]="renderedBody"
           ></div>
           <ng-template #noBody>
-            <div class="text-center py-12 text-gray-400 italic">
-              <svg class="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="text-center py-12 text-gray-500 italic">
+              <svg class="w-16 h-16 mx-auto mb-4 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
               </svg>
               <p>No description provided.</p>
@@ -139,33 +136,32 @@
       <!-- Comments Section -->
       <div *ngIf="comments.length > 0" class="space-y-6">
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, #06b6d4 0%, #a855f7 100%);">
             <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd"></path>
             </svg>
           </div>
-          <h3 class="text-2xl font-bold gradient-text">
+          <h3 class="text-2xl font-bold gradient-text font-display">
             {{ comments.length }} {{ comments.length === 1 ? 'Comment' : 'Comments' }}
           </h3>
         </div>
         
         <div *ngFor="let comment of comments; let i = index" 
-             class="glass-card rounded-2xl overflow-hidden transform hover:scale-[1.01] transition-all duration-300"
-             [style.animation-delay]="i * 0.1 + 's'">
-          <div class="bg-gradient-to-r from-gray-50 to-blue-50 px-8 py-4 border-b border-gray-200">
+             class="premium-card rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300">
+          <div class="px-8 py-4 border-b border-gray-800" style="background: rgba(168, 85, 247, 0.05);">
             <div class="flex items-center gap-4">
-              <img [src]="comment.user.avatar_url" [alt]="comment.user.login" class="w-12 h-12 rounded-full ring-4 ring-white shadow-lg">
+              <img [src]="comment.user.avatar_url" [alt]="comment.user.login" class="w-10 h-10 rounded-full ring-2 ring-purple-500/50 shadow-lg">
               <div class="flex-1">
-                <div class="font-bold text-gray-900 text-lg">{{ comment.user.login }}</div>
-                <div class="text-sm text-gray-600">commented {{ getRelativeTime(comment.created_at) }}</div>
+                <div class="font-bold text-white text-base">{{ comment.user.login }}</div>
+                <div class="text-sm text-gray-400">commented {{ getRelativeTime(comment.created_at) }}</div>
               </div>
-              <span class="text-gray-400 font-mono text-sm">#{{ i + 1 }}</span>
+              <span class="text-gray-500 font-mono text-sm">#{{ i + 1 }}</span>
             </div>
           </div>
           
           <div class="p-8">
             <div 
-              class="markdown-body"
+              class="markdown-body prose-invert max-w-none"
               [innerHTML]="getRenderedComment(comment.id)"
             ></div>
           </div>
@@ -173,29 +169,15 @@
       </div>
 
       <!-- No Comments State -->
-      <div *ngIf="comments.length === 0 && !loading" class="glass-card rounded-2xl p-12 text-center">
-        <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-          <svg class="w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div *ngIf="comments.length === 0 && !loading" class="premium-card rounded-2xl p-12 text-center">
+        <div class="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4" style="background: rgba(100, 116, 139, 0.1);">
+          <svg class="w-10 h-10 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
           </svg>
         </div>
-        <p class="text-gray-500 text-xl font-semibold mb-2">No comments yet</p>
-        <p class="text-gray-400">Be the first to share your thoughts!</p>
+        <p class="text-gray-400 text-xl font-semibold mb-2">No comments yet</p>
+        <p class="text-gray-500">Be the first to share your thoughts!</p>
       </div>
     </div>
   </div>
-
-  <!-- Footer -->
-  <footer class="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white mt-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div class="text-center">
-        <div class="flex justify-center mb-4">
-          <svg class="w-12 h-12 text-white/80 github-icon" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-          </svg>
-        </div>
-        <p class="text-gray-400">Built with ❤️ using Angular and Tailwind CSS • © 2025</p>
-      </div>
-    </div>
-  </footer>
 </div>

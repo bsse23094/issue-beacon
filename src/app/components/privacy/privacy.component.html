@@ -1,0 +1,148 @@
+<section class="relative min-h-screen py-12 sm:py-16">
+  <!-- Background Orbs -->
+  <div class="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-30 animate-pulse"></div>
+  <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-30 animate-pulse" style="animation-delay: 2s"></div>
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4 gradient-text font-display">
+        Privacy Policy
+      </h1>
+      <p class="text-gray-400 text-sm sm:text-base">
+        Last updated: {{ lastUpdated }}
+      </p>
+    </div>
+
+    <!-- Content -->
+    <div class="premium-card p-6 sm:p-8 md:p-10 space-y-8">
+      <!-- Introduction -->
+      <div>
+        <h2 class="text-2xl font-bold mb-4 text-white font-display">Introduction</h2>
+        <p class="text-gray-300 leading-relaxed">
+          Welcome to Issue Beacon. We respect your privacy and are committed to protecting your personal data. 
+          This privacy policy explains how we handle your information when you use our GitHub analytics platform.
+        </p>
+      </div>
+
+      <!-- Information We Collect -->
+      <div>
+        <h2 class="text-2xl font-bold mb-4 text-white font-display">Information We Collect</h2>
+        <div class="space-y-4 text-gray-300">
+          <div>
+            <h3 class="text-lg font-semibold text-cyan-400 mb-2">GitHub API Data</h3>
+            <p class="leading-relaxed">
+              Issue Beacon fetches publicly available data from GitHub's API, including repository information, 
+              issues, commits, and contributor statistics. This data is only accessed when you explicitly request 
+              analysis of a specific repository.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-cyan-400 mb-2">Local Storage</h3>
+            <p class="leading-relaxed">
+              We may store your search preferences and recently viewed repositories in your browser's local storage 
+              to enhance your experience. This data never leaves your device.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-cyan-400 mb-2">Analytics Data</h3>
+            <p class="leading-relaxed">
+              We do not use any third-party analytics services. All data visualization and processing happens 
+              entirely in your browser.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- How We Use Information -->
+      <div>
+        <h2 class="text-2xl font-bold mb-4 text-white font-display">How We Use Your Information</h2>
+        <ul class="space-y-2 text-gray-300">
+          <li class="flex items-start">
+            <span class="text-cyan-400 mr-2">•</span>
+            <span>To display GitHub repository analytics and visualizations</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-cyan-400 mr-2">•</span>
+            <span>To provide commit tracking and contributor insights</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-cyan-400 mr-2">•</span>
+            <span>To enhance user experience through local storage preferences</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Data Security -->
+      <div>
+        <h2 class="text-2xl font-bold mb-4 text-white font-display">Data Security</h2>
+        <p class="text-gray-300 leading-relaxed">
+          Issue Beacon is a client-side application. All API requests are made directly from your browser to 
+          GitHub's servers. We do not store, transmit, or process your data on our servers because we don't have any.
+        </p>
+      </div>
+
+      <!-- Third-Party Services -->
+      <div>
+        <h2 class="text-2xl font-bold mb-4 text-white font-display">Third-Party Services</h2>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          Issue Beacon integrates with the following third-party service:
+        </p>
+        <div class="bg-black/20 border border-gray-700 rounded-lg p-4">
+          <h3 class="text-lg font-semibold text-cyan-400 mb-2">GitHub API</h3>
+          <p class="text-gray-300 leading-relaxed">
+            We use GitHub's public API to fetch repository data. Please refer to 
+            <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" 
+               target="_blank" 
+               class="text-cyan-400 hover:text-cyan-300 underline">
+              GitHub's Privacy Statement
+            </a> 
+            for more information about how GitHub handles data.
+          </p>
+        </div>
+      </div>
+
+      <!-- Your Rights -->
+      <div>
+        <h2 class="text-2xl font-bold mb-4 text-white font-display">Your Rights</h2>
+        <p class="text-gray-300 leading-relaxed">
+          Since we don't collect or store personal data on our servers, you have complete control over your 
+          information. You can clear your browser's local storage at any time to remove any saved preferences.
+        </p>
+      </div>
+
+      <!-- Changes to Policy -->
+      <div>
+        <h2 class="text-2xl font-bold mb-4 text-white font-display">Changes to This Policy</h2>
+        <p class="text-gray-300 leading-relaxed">
+          We may update this privacy policy from time to time. Any changes will be posted on this page with 
+          an updated revision date.
+        </p>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h2 class="text-2xl font-bold mb-4 text-white font-display">Contact Us</h2>
+        <p class="text-gray-300 leading-relaxed">
+          If you have any questions about this privacy policy, please contact us through our 
+          <a href="https://github.com/bsse23094/issue-beacon" 
+             target="_blank" 
+             class="text-cyan-400 hover:text-cyan-300 underline">
+            GitHub repository
+          </a>.
+        </p>
+      </div>
+    </div>
+
+    <!-- Back to Home -->
+    <div class="text-center mt-8">
+      <a routerLink="/" 
+         class="inline-flex items-center gap-2 px-6 py-3 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 border border-cyan-500/50 rounded-lg font-semibold transition-all duration-300 hover:scale-105">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+        </svg>
+        Back to Home
+      </a>
+    </div>
+  </div>
+</section>

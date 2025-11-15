@@ -1,30 +1,15 @@
 <div class="min-h-screen">
   <!-- Hero Header with Gradient -->
-  <header class="gradient-bg relative overflow-hidden">
-    <div class="absolute inset-0 bg-black/10"></div>
-    <!-- Animated background shapes -->
-    <div class="absolute top-10 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl float"></div>
-    <div class="absolute bottom-10 right-10 w-96 h-96 bg-white/10 rounded-full blur-3xl float" style="animation-delay: 1s;"></div>
+  <header class="relative overflow-hidden pb-8" style="background: linear-gradient(135deg, #0a0e1a 0%, #0f1420 50%, #0a0e1a 100%);">
+    <!-- Animated background orbs - HIGHLY VISIBLE -->
+    <div class="absolute top-10 left-10 w-96 h-96 rounded-full blur-3xl float" 
+         style="background: radial-gradient(circle, rgba(6, 182, 212, 0.4) 0%, rgba(6, 182, 212, 0.2) 40%, rgba(6, 182, 212, 0.05) 70%, transparent 100%);"></div>
+    <div class="absolute bottom-10 right-10 w-80 h-80 rounded-full blur-3xl float" 
+         style="background: radial-gradient(circle, rgba(168, 85, 247, 0.35) 0%, rgba(168, 85, 247, 0.15) 50%, transparent 80%); animation-delay: 1.5s;"></div>
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-full blur-3xl float" 
+         style="background: radial-gradient(circle, rgba(34, 211, 238, 0.3) 0%, rgba(34, 211, 238, 0.1) 60%, transparent 90%); animation-delay: 3s;"></div>
     
-    <!-- Theme Toggle Button -->
-    <div class="absolute top-6 right-6 z-20">
-      <button
-        (click)="themeService.toggle()"
-        class="glass-card p-3 rounded-xl hover:scale-110 transition-all duration-300 group"
-        [title]="'Theme: ' + themeService.current"
-      >
-        <!-- Moon Icon (Dark Mode shown) -->
-        <svg *ngIf="themeService.isDark" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
-        </svg>
-        <!-- Sun Icon (Light Mode shown) -->
-        <svg *ngIf="!themeService.isDark" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-        </svg>
-      </button>
-    </div>
-    
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
       <div class="text-center">
         <!-- GitHub Logo -->
         <div class="flex justify-center mb-6">
@@ -42,15 +27,15 @@
         </p>
         
         <!-- Quick Stats -->
-        <div class="flex justify-center gap-8 flex-wrap">
+        <div class="flex justify-center gap-8 flex-wrap mb-8">
           <div class="glass-card px-6 py-3 rounded-full">
-            <span class="text-white font-semibold">⚡ Lightning Fast</span>
+            <span class="text-white font-semibold">Lightning Fast</span>
           </div>
           <div class="glass-card px-6 py-3 rounded-full">
-            <span class="text-white font-semibold">💾 Offline Ready</span>
+            <span class="text-white font-semibold">Offline Ready</span>
           </div>
           <div class="glass-card px-6 py-3 rounded-full">
-            <span class="text-white font-semibold">🎨 Beautiful UI</span>
+            <span class="text-white font-semibold">Beautiful UI</span>
           </div>
         </div>
       </div>
@@ -59,7 +44,7 @@
     <!-- Wave separator -->
     <div class="absolute bottom-0 left-0 right-0">
       <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 0L60 10C120 20 240 40 360 46.7C480 53 600 47 720 43.3C840 40 960 40 1080 46.7C1200 53 1320 67 1380 73.3L1440 80V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0V0Z" fill="rgb(var(--bg-primary))"/>
+        <path d="M0 0L60 10C120 20 240 40 360 46.7C480 53 600 47 720 43.3C840 40 960 40 1080 46.7C1200 53 1320 67 1380 73.3L1440 80V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0V0Z" fill="#0a0e1a"/>
       </svg>
     </div>
   </header>
@@ -78,41 +63,25 @@
       
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="relative">
-          <label class="block text-sm font-semibold mb-2" style="color: rgb(var(--text-primary))">Repository Owner</label>
-          <div class="relative">
-            <span class="absolute left-4 top-1/2 -translate-y-1/2" style="color: rgb(var(--text-secondary))">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"></path>
-              </svg>
-            </span>
-            <input
-              type="text"
-              [(ngModel)]="owner"
-              (change)="onRepoChange()"
-              class="w-full pl-12 pr-4 py-3 border-2 rounded-xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
-              style="background: rgb(var(--card-bg)); color: rgb(var(--text-primary)); border-color: rgb(var(--border-color))"
-              placeholder="facebook"
-            />
-          </div>
+          <label class="block text-sm font-semibold mb-2" style="color: var(--text-primary);">Repository Owner</label>
+          <input
+            type="text"
+            [(ngModel)]="owner"
+            (change)="onRepoChange()"
+            class="input-premium w-full transition-all"
+            placeholder="facebook"
+          />
         </div>
         
         <div class="relative">
-          <label class="block text-sm font-semibold mb-2" style="color: rgb(var(--text-primary))">Repository Name</label>
-          <div class="relative">
-            <span class="absolute left-4 top-1/2 -translate-y-1/2" style="color: rgb(var(--text-secondary))">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"></path>
-              </svg>
-            </span>
-            <input
-              type="text"
-              [(ngModel)]="repo"
-              (change)="onRepoChange()"
-              class="w-full pl-12 pr-4 py-3 border-2 rounded-xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
-              style="background: rgb(var(--card-bg)); color: rgb(var(--text-primary)); border-color: rgb(var(--border-color))"
-              placeholder="react"
-            />
-          </div>
+          <label class="block text-sm font-semibold mb-2" style="color: var(--text-primary);">Repository Name</label>
+          <input
+            type="text"
+            [(ngModel)]="repo"
+            (change)="onRepoChange()"
+            class="input-premium w-full transition-all"
+            placeholder="react"
+          />
         </div>
       </div>
     </div>
@@ -130,50 +99,50 @@
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <div>
-          <label class="block text-sm font-semibold text-gray-700 mb-2">State</label>
+          <label class="block text-sm font-semibold mb-2" style="color: var(--text-primary);">State</label>
           <select
             [(ngModel)]="state"
             (change)="onFilterChange()"
-            class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all bg-white cursor-pointer hover:border-blue-300"
+            class="input-premium cursor-pointer"
           >
-            <option value="open">🟢 Open</option>
-            <option value="closed">🟣 Closed</option>
-            <option value="all">📋 All</option>
+            <option value="open">Open</option>
+            <option value="closed">Closed</option>
+            <option value="all">All</option>
           </select>
         </div>
         
         <div>
-          <label class="block text-sm font-semibold text-gray-700 mb-2">Sort By</label>
+          <label class="block text-sm font-semibold mb-2" style="color: var(--text-primary);">Sort By</label>
           <select
             [(ngModel)]="sort"
             (change)="onFilterChange()"
-            class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all bg-white cursor-pointer hover:border-blue-300"
+            class="input-premium cursor-pointer"
           >
-            <option value="created">📅 Created</option>
-            <option value="updated">🔄 Updated</option>
-            <option value="comments">💬 Comments</option>
+            <option value="created">Created</option>
+            <option value="updated">Updated</option>
+            <option value="comments">Comments</option>
           </select>
         </div>
         
         <div>
-          <label class="block text-sm font-semibold text-gray-700 mb-2">Direction</label>
+          <label class="block text-sm font-semibold mb-2" style="color: var(--text-primary);">Direction</label>
           <select
             [(ngModel)]="direction"
             (change)="onFilterChange()"
-            class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all bg-white cursor-pointer hover:border-blue-300"
+            class="input-premium cursor-pointer"
           >
-            <option value="desc">⬇️ Newest First</option>
-            <option value="asc">⬆️ Oldest First</option>
+            <option value="desc">Newest First</option>
+            <option value="asc">Oldest First</option>
           </select>
         </div>
         
         <div>
-          <label class="block text-sm font-semibold text-gray-700 mb-2">Labels</label>
+          <label class="block text-sm font-semibold mb-2" style="color: var(--text-primary);">Labels</label>
           <input
             type="text"
             [(ngModel)]="labels"
             (change)="onFilterChange()"
-            class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
+            class="input-premium w-full transition-all"
             placeholder="bug, enhancement"
           />
         </div>
@@ -187,12 +156,40 @@
     </div>
 
     <!-- Error State -->
-    <div *ngIf="error" class="glass-card rounded-2xl p-8 mb-6 bg-red-50 border-2 border-red-200">
+  <div *ngIf="error" class="glass-card glass-alert glass-alert--danger rounded-2xl p-8 mb-6">
       <div class="flex items-center gap-3">
         <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 20 20">
           <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
         </svg>
         <p class="text-red-800 font-semibold">{{ error }}</p>
+      </div>
+    </div>
+
+    <!-- Rate Limit Help Banner -->
+  <div *ngIf="error && error.includes('rate limit')" class="glass-card glass-alert glass-alert--info rounded-2xl p-8 mb-6">
+      <div class="flex items-start gap-4">
+        <div class="w-12 h-12 bg-cyan-500 rounded-xl flex items-center justify-center flex-shrink-0">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </div>
+        <div class="flex-1">
+          <h3 class="text-lg font-bold text-gray-900 mb-3">💡 How to Fix Rate Limit Issue</h3>
+          <div class="space-y-3 text-sm text-gray-700">
+            <p class="font-semibold">GitHub API limits unauthenticated requests to 60 per hour. To increase this to 5,000 per hour:</p>
+            <ol class="list-decimal list-inside space-y-2 ml-4">
+              <li>Go to <a href="https://github.com/settings/tokens" target="_blank" class="text-cyan-600 hover:text-cyan-700 font-semibold underline">GitHub Settings → Developer settings → Personal access tokens</a></li>
+              <li>Click "Generate new token (classic)"</li>
+              <li>Give it a name (e.g., "IssueBeacon")</li>
+              <li><strong>Don't select any scopes</strong> (public repo access only)</li>
+              <li>Click "Generate token" and copy the token</li>
+              <li>Open <code class="bg-gray-200 px-2 py-1 rounded">src/environments/environment.ts</code></li>
+              <li>Add your token: <code class="bg-gray-200 px-2 py-1 rounded">githubToken: 'your_token_here'</code></li>
+              <li>Save and reload the app</li>
+            </ol>
+            <p class="text-xs text-gray-600 mt-4">⚠️ Never commit your token to Git! Add environment.ts to .gitignore</p>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -291,7 +288,7 @@
       </div>
 
       <div *ngFor="let issue of issues" 
-           class="issue-card p-6"
+           class="issue-card group p-6 cursor-pointer hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
            [routerLink]="['/issue', owner, repo, issue.number]">
         <div class="flex items-start gap-4">
           <!-- Issue Icon -->
@@ -312,15 +309,16 @@
               <span class="font-mono text-sm flex-shrink-0" style="color: rgb(var(--text-secondary))">#{{ issue.number }}</span>
             </div>
             
-            <!-- Labels -->
-            <div *ngIf="issue.labels.length > 0" class="flex flex-wrap gap-2 mb-4">
+            <!-- Labels - Smooth & Premium -->
+            <div *ngIf="issue.labels.length > 0" class="flex flex-wrap gap-1.5 mb-4">
               <span
                 *ngFor="let label of issue.labels"
-                class="label-badge"
-                [style.background-color]="'#' + label.color"
-                [style.color]="getContrastColor(label.color)"
+                class="label inline-flex items-center px-2.5 py-1 text-xs font-semibold rounded-full transition-all duration-200 hover:scale-105"
+                [style.background]="'rgba(' + hexToRgb(label.color) + ', 0.15)'"
+                [style.border]="'1px solid rgba(' + hexToRgb(label.color) + ', 0.35)'"
+                [style.color]="'#' + label.color"
               >
-                🏷️ {{ label.name }}
+                {{ label.name }}
               </span>
             </div>
             
@@ -395,47 +393,4 @@
       </button>
     </div>
   </div>
-
-  <!-- Footer -->
-  <footer class="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white mt-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div>
-          <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-            </svg>
-            GitHub Issue Explorer
-          </h3>
-          <p class="text-gray-400">
-            A modern, beautiful interface to browse and explore GitHub issues with offline support and real-time updates.
-          </p>
-        </div>
-        
-        <div>
-          <h4 class="font-semibold mb-4">Features</h4>
-          <ul class="space-y-2 text-gray-400">
-            <li>✨ Beautiful UI with animations</li>
-            <li>💾 Offline support with IndexedDB</li>
-            <li>📖 Markdown rendering</li>
-            <li>🔍 Advanced filters & search</li>
-          </ul>
-        </div>
-        
-        <div>
-          <h4 class="font-semibold mb-4">Tech Stack</h4>
-          <ul class="space-y-2 text-gray-400">
-            <li>⚡ Angular 19</li>
-            <li>🎨 Tailwind CSS</li>
-            <li>🔒 DOMPurify</li>
-            <li>📝 Marked</li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-        <p>Built with ❤️ using Angular and Tailwind CSS • © 2025</p>
-      </div>
-    </div>
-  </footer>
 </div>

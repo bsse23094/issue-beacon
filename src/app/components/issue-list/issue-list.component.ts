@@ -45,6 +45,8 @@ export class IssueListComponent implements OnInit {
     this.loading = true;
     this.error = null;
 
+    console.log('Loading issues for:', this.owner, '/', this.repo);
+
     this.githubService
       .getIssues(this.owner, this.repo, {
         state: this.state,
@@ -56,14 +58,31 @@ export class IssueListComponent implements OnInit {
       })
       .subscribe({
         next: ({ issues, links }) => {
+          console.log('Received issues:', issues.length);
           this.issues = issues;
           this.paginationLinks = links;
           this.loading = false;
+          
+          if (issues.length === 0) {
+            this.error = 'No issues found. Try adjusting your filters.';
+          }
         },
         error: (err) => {
-          this.error = 'Failed to load issues. Please try again.';
+          console.error('Error in component:', err);
+          
+          if (err.status === 0) {
+            this.error = 'Network error. Please check your internet connection.';
+          } else if (err.status === 403) {
+            this.error = '⚠️ GitHub API rate limit exceeded. Add a GitHub token in environment.ts or try again in an hour. See console for instructions.';
+          } else if (err.status === 404) {
+            this.error = 'Repository not found. Please check the owner and repo name.';
+          } else if (err.message && err.message.includes('No cached data')) {
+            this.error = '⚠️ GitHub API rate limit exceeded and no cached data available. Please add a GitHub Personal Access Token in environment.ts to continue. Check console for instructions.';
+          } else {
+            this.error = 'Failed to load issues. Please try again.';
+          }
+          
           this.loading = false;
-          console.error(err);
         },
       });
   }
@@ -104,6 +123,17 @@ export class IssueListComponent implements OnInit {
 
   getStateIcon(state: string): string {
     return state === 'open' ? '●' : '✓';
+  }
+
+  hexToRgb(hex: string): string {
+    // Remove # if present
+    hex = hex.replace('#', '');
+    
+    const r = parseInt(hex.substring(0, 2), 16);
+    const g = parseInt(hex.substring(2, 4), 16);
+    const b = parseInt(hex.substring(4, 6), 16);
+    
+    return `${r}, ${g}, ${b}`;
   }
 
   getContrastColor(hexColor: string): string {
