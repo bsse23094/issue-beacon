@@ -1,4 +1,4 @@
-# 🔍 IssueBeacon# 🔍 IssueBeacon# 🔍 IssueBeacon# 🔍 IssueBeacon# GitHub Issue Explorer
+IssueBeacon GitHub Issue Explorer
 
 
 
