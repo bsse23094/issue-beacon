@@ -42,6 +42,5 @@ testem.log
 Thumbs.db
 .vercel
 
-# Environment files with tokens
+# Environment files with tokens (keep environment.ts local only)
 /src/environments/environment.ts
-/src/environments/environment.prod.ts
