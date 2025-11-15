@@ -1,4 +1,4 @@
-# 🔍 IssueBeacon# 🔍 IssueBeacon# 🔍 IssueBeacon# GitHub Issue Explorer
+# 🔍 IssueBeacon# 🔍 IssueBeacon# 🔍 IssueBeacon# 🔍 IssueBeacon# GitHub Issue Explorer
 
 
 
@@ -6,7 +6,7 @@
 
 
 
-[![Angular](https://img.shields.io/badge/Angular-19.2-DD0031?logo=angular)](https://angular.io/)**ILLUMINATE YOUR CODEBASE** - A sleek, modern GitHub Issue Explorer built with Angular 19
+[![Angular](https://img.shields.io/badge/Angular-19.2-DD0031?logo=angular)](https://angular.io/)**ILLUMINATE YOUR CODEBASE** - A premium GitHub analytics platform built with Angular 19
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?logo=typescript)](https://www.typescriptlang.org/)
 
@@ -14,11 +14,11 @@
 
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-[![Angular](https://img.shields.io/badge/Angular-19.2-DD0031?logo=angular)](https://angular.io/)**ILLUMINATE YOUR CODEBASE** - A sleek, modern GitHub Issue Explorer built with Angular 19A modern Angular application to browse and explore GitHub issues with offline support, markdown rendering, and a beautiful Tailwind UI.
+[![Angular](https://img.shields.io/badge/Angular-19.2-DD0031?logo=angular)](https://angular.io/)**ILLUMINATE YOUR CODEBASE** - A sleek, modern GitHub Issue Explorer built with Angular 19
 
 ## 🌐 Live Demo
 
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6?logo=typescript)](https://www.typescriptlang.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?logo=typescript)](https://www.typescriptlang.org/)
 
 **🚀 [https://bsse23094.github.io/issue-beacon/](https://bsse23094.github.io/issue-beacon/)**
 
@@ -26,11 +26,11 @@
 
 ---
 
-[![Deploy](https://github.com/bsse23094/issue-beacon/actions/workflows/deploy.yml/badge.svg)](https://github.com/bsse23094/issue-beacon/actions/workflows/deploy.yml)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 ## ✨ Features
 
-[![Angular](https://img.shields.io/badge/Angular-19.2-DD0031?logo=angular)](https://angular.io/)## ✨ Features
+[![Angular](https://img.shields.io/badge/Angular-19.2-DD0031?logo=angular)](https://angular.io/)**ILLUMINATE YOUR CODEBASE** - A sleek, modern GitHub Issue Explorer built with Angular 19A modern Angular application to browse and explore GitHub issues with offline support, markdown rendering, and a beautiful Tailwind UI.
 
 ### 🎨 Premium UI/UX Design
 
@@ -42,320 +42,679 @@
 
 - **Premium Typography** - Lexend, DM Sans, and Instrument Sans font families
 
-- **Responsive Design** - Flawless experience on desktop, tablet, and mobile**🚀 GitHub Pages: [https://bsse23094.github.io/issue-beacon/](https://bsse23094.github.io/issue-beacon/)**
+- **Responsive Design** - Flawless experience on desktop, tablet, and mobile**🚀 [https://bsse23094.github.io/issue-beacon/](https://bsse23094.github.io/issue-beacon/)**
 
 
 
-### 🔍 Issue Explorer[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-06B6D4?logo=tailwindcss)](https://tailwindcss.com/)- 🔍 **Browse GitHub Issues** - Search and filter issues from any public repository
+### 🔍 Issue Explorer[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-06B6D4?logo=tailwindcss)](https://tailwindcss.com/)
 
 - **Browse GitHub Issues** - Search and explore issues from any public repository
 
-- **Advanced Filtering** - Filter by state (open/closed/all), labels, sort order, and directionAlso on Vercel: [https://issue-beacon-dpwfn9s0d-ahmed-ayyans-projects.vercel.app](https://issue-beacon-dpwfn9s0d-ahmed-ayyans-projects.vercel.app)
+- **Advanced Filtering** - Filter by state (open/closed/all), labels, sort order, and direction---
 
 - **Markdown Rendering** - Secure client-side markdown with syntax highlighting via Marked.js
 
-- **Offline Support** - IndexedDB caching for offline browsing (automatic cache management)- 🏷️ **Advanced Filtering** - Filter by state (open/closed/all), labels, sort order, and more
+- **Offline Support** - IndexedDB caching for offline browsing (automatic cache management)[![Deploy](https://github.com/bsse23094/issue-beacon/actions/workflows/deploy.yml/badge.svg)](https://github.com/bsse23094/issue-beacon/actions/workflows/deploy.yml)
 
 - **Pagination** - Navigate through large issue lists with GitHub Link header support
 
-- **Comments** - View all comments with beautifully rendered markdown---
+- **Comments** - View all comments with beautifully rendered markdown## ✨ Features
 
 
 
-### 📊 Repository Analytics## ✨ Features- 📖 **Markdown Rendering** - Secure client-side markdown rendering with syntax highlighting
+### 📊 Repository Analytics[![Angular](https://img.shields.io/badge/Angular-19.2-DD0031?logo=angular)](https://angular.io/)## ✨ Features
 
 - **Deep Statistics** - Stars, forks, watchers, issues, size, and contributors
 
-- **Language Distribution** - Interactive donut chart with percentage breakdowns## ✨ Features
+- **Language Distribution** - Interactive donut chart with percentage breakdowns### 🎨 Premium UI/UX Design
 
 - **Top Contributors** - Bar chart visualization of commit activity
 
-- **Repository Info** - Topics, license, creation date, and default branch- 💾 **Offline Support** - IndexedDB caching for offline browsing (5-minute cache)
+- **Repository Info** - Topics, license, creation date, and default branch- **Ultra-Transparent Glassmorphism** - Beautiful glass cards with 3-8% opacity backgrounds and 20px blur## 🌐 Live Demo
 
 
 
-### 📈 Commit Analytics### 🎨 Beautiful UI/UX
+### 📈 Commit Analytics- **Particle Network Background** - Interactive animated canvas with floating orbs
 
 - **Activity Timeline** - Beautiful gradient bar chart showing daily commit patterns
 
-- **24h Frequency Heatmap** - Circular chart displaying hourly commit distribution- **Dual Theme Support** - Stunning light and dark modes with smooth transitions### 🎨 Beautiful UI/UX- 📱 **Responsive Design** - Beautiful Tailwind CSS UI that works on all devices
+- **24h Frequency Heatmap** - Circular chart displaying hourly commit distribution- **Smooth Animations** - Slide-up, fade-in, scale effects, and gradient transitions[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6?logo=typescript)](https://www.typescriptlang.org/)
 
 - **Commit Metrics** - Total commits, weekly/monthly stats, and daily averages
 
-- **Detailed History** - View commit messages, authors, timestamps, and SHAs- **Glassmorphism Design** - Modern cards with backdrop blur effects
+- **Detailed History** - View commit messages, authors, timestamps, and SHAs- **Premium Typography** - Lexend, DM Sans, and Instrument Sans font families
 
 
 
-### 👥 User Comparison- **Particle Network Background** - Interactive animated canvas- **Dual Theme Support** - Stunning light and dark modes with smooth transitions- 🔗 **Pagination** - Navigate through large issue lists with Link header support
+### 👥 User Comparison- **Responsive Design** - Flawless experience on desktop, tablet, and mobile**🚀 GitHub Pages: [https://bsse23094.github.io/issue-beacon/](https://bsse23094.github.io/issue-beacon/)**
 
 - **Head-to-Head Analysis** - Compare two GitHub users side-by-side
 
-- **Profile Overview** - Avatars, bios, followers, following, and public repos- **Smooth Animations** - Slide-up, fade-in, and scale effects
+- **Profile Overview** - Avatars, bios, followers, following, and public repos
 
 - **Impact Score** - Custom algorithm weighing followers, stars, and commit activity
 
-- **Language Breakdown** - Top 4 languages with visual progress bars and percentages- **Glassmorphism Design** - Modern cards with backdrop blur effects- 💬 **Comments** - View all comments with rendered markdown
+- **Language Breakdown** - Top 4 languages with visual progress bars and percentages### 🔍 Issue Explorer[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-06B6D4?logo=tailwindcss)](https://tailwindcss.com/)- 🔍 **Browse GitHub Issues** - Search and filter issues from any public repository
 
 - **Top Repositories** - Stars and forks for each user's most popular repos
 
-- **Comparison Matrix** - Direct metric-by-metric comparison with delta calculations### 🔍 Powerful Search & Filtering
+- **Comparison Matrix** - Direct metric-by-metric comparison with delta calculations- **Browse GitHub Issues** - Search and explore issues from any public repository
 
 
 
-### 🚀 Technical Highlights- **Real-time Search** - Search through issue titles and descriptions instantly- **Particle Network Background** - Interactive animated canvas- ⚡ **Fast** - Built with Angular 19 with SSR support
+### 🚀 Technical Highlights- **Advanced Filtering** - Filter by state (open/closed/all), labels, sort order, and directionAlso on Vercel: [https://issue-beacon-dpwfn9s0d-ahmed-ayyans-projects.vercel.app](https://issue-beacon-dpwfn9s0d-ahmed-ayyans-projects.vercel.app)
 
 - **Angular 19** - Latest standalone components architecture
 
-- **TypeScript 5.7** - Strict type safety and modern ECMAScript features- **State Filters** - Filter by All, Open, or Closed issues
+- **TypeScript 5.7** - Strict type safety and modern ECMAScript features- **Markdown Rendering** - Secure client-side markdown with syntax highlighting via Marked.js
 
 - **Tailwind CSS 3.4** - Utility-first styling with custom design system
 
-- **RxJS** - Reactive programming for async operations- **Smart Pagination** - 10 issues per page with easy navigation- **Smooth Animations** - Slide-up, fade-in, and scale effects
+- **RxJS** - Reactive programming for async operations- **Offline Support** - IndexedDB caching for offline browsing (automatic cache management)- 🏷️ **Advanced Filtering** - Filter by state (open/closed/all), labels, sort order, and more
 
 - **Chart.js 4.5** - Beautiful data visualizations
 
-- **IndexedDB (idb)** - Client-side database for offline caching- **Live Results** - See results update as you type
+- **IndexedDB (idb)** - Client-side database for offline caching- **Pagination** - Navigate through large issue lists with GitHub Link header support
 
 - **DOMPurify** - XSS protection for markdown content
 
-- **GitHub API v3** - Real-time data from GitHub REST API## 🚀 Quick Start
+- **GitHub API v3** - Real-time data from GitHub REST API- **Comments** - View all comments with beautifully rendered markdown---
 
 
 
----### 📊 Interactive Dashboard
+---
 
 
 
-## 🚀 Quick Start- **Statistics Cards** - View Total, Open, Closed issues, and Average Comments### 🔍 Powerful Search & Filtering
+## 🚀 Quick Start### 📊 Repository Analytics## ✨ Features- 📖 **Markdown Rendering** - Secure client-side markdown rendering with syntax highlighting
 
 
 
-### Prerequisites- **Repository Switcher** - Explore popular repositories (React, Vue, Angular, VS Code, TensorFlow)
+### Prerequisites- **Deep Statistics** - Stars, forks, watchers, issues, size, and contributors
 
 - **Node.js** 18+ and npm
 
-- **Git**- **Issue Detail Modal** - Click any issue to see full details in a beautiful modal- **Real-time Search** - Search through issue titles and descriptions### Prerequisites
+- **Git**- **Language Distribution** - Interactive donut chart with percentage breakdowns## ✨ Features
 
-- (Optional) **GitHub Personal Access Token** for higher rate limits
 
-- **Direct GitHub Links** - Open issues directly on GitHub with one click
 
-### Installation
+### Installation- **Top Contributors** - Bar chart visualization of commit activity
 
-- **State Filters** - Filter by All, Open, or Closed issues
 
-```powershell
 
-# Clone the repository### 🚀 Technical Highlights
+```powershell- **Repository Info** - Topics, license, creation date, and default branch- 💾 **Offline Support** - IndexedDB caching for offline browsing (5-minute cache)
+
+# Clone the repository
 
 git clone https://github.com/bsse23094/issue-beacon.git
 
-- Built with **Angular 19** (Latest Standalone Components)- **Smart Pagination** - 10 issues per page with navigation- Node.js 18+ and npm
-
-# Navigate to project directory
-
-cd issue-beacon- **Tailwind CSS** for utility-first styling
 
 
+# Navigate to project directory### 📈 Commit Analytics### 🎨 Beautiful UI/UX
 
-# Install dependencies- **GitHub API Integration** for real-time data- **Live Results** - See results update as you type- Git
+cd issue-beacon
 
-npm install
+- **Activity Timeline** - Beautiful gradient bar chart showing daily commit patterns
 
-- **Responsive Design** - Works perfectly on all devices
+# Install dependencies
+
+npm install- **24h Frequency Heatmap** - Circular chart displaying hourly commit distribution- **Dual Theme Support** - Stunning light and dark modes with smooth transitions### 🎨 Beautiful UI/UX- 📱 **Responsive Design** - Beautiful Tailwind CSS UI that works on all devices
+
+
+
+# Create environment file from template- **Commit Metrics** - Total commits, weekly/monthly stats, and daily averages
+
+Copy-Item src/environments/environment.template.ts src/environments/environment.ts
+
+- **Detailed History** - View commit messages, authors, timestamps, and SHAs- **Glassmorphism Design** - Modern cards with backdrop blur effects
+
+# (Optional) Add your GitHub token to src/environments/environment.ts
+
+# This increases rate limits from 60 to 5,000 requests/hour
+
+# Get a token at: https://github.com/settings/tokens (no scopes needed)
+
+### 👥 User Comparison- **Particle Network Background** - Interactive animated canvas- **Dual Theme Support** - Stunning light and dark modes with smooth transitions- 🔗 **Pagination** - Navigate through large issue lists with Link header support
 
 # Start development server
 
-npm start- **TypeScript** for type safety
+npm start- **Head-to-Head Analysis** - Compare two GitHub users side-by-side
 
 ```
 
-- **RxJS** for reactive programming
+- **Profile Overview** - Avatars, bios, followers, following, and public repos- **Smooth Animations** - Slide-up, fade-in, and scale effects
 
 Visit **http://localhost:4200/** 🎉
 
-### 📊 Interactive Dashboard### Installation
+- **Impact Score** - Custom algorithm weighing followers, stars, and commit activity
 
 ---
 
+- **Language Breakdown** - Top 4 languages with visual progress bars and percentages- **Glassmorphism Design** - Modern cards with backdrop blur effects- 💬 **Comments** - View all comments with rendered markdown
+
+## 🔑 GitHub API Token Setup (Optional but Recommended)
+
+- **Top Repositories** - Stars and forks for each user's most popular repos
+
+### Why use a token?
+
+- **Without token**: 60 requests/hour (may hit limits quickly)- **Comparison Matrix** - Direct metric-by-metric comparison with delta calculations### 🔍 Powerful Search & Filtering
+
+- **With token**: 5,000 requests/hour (smooth experience)
+
+
+
+### How to add your token:
+
+### 🚀 Technical Highlights- **Real-time Search** - Search through issue titles and descriptions instantly- **Particle Network Background** - Interactive animated canvas- ⚡ **Fast** - Built with Angular 19 with SSR support
+
+1. **Generate a token** at [GitHub Settings → Personal Access Tokens](https://github.com/settings/tokens)
+
+   - Click "Generate new token (classic)"- **Angular 19** - Latest standalone components architecture
+
+   - No scopes/permissions needed for public repositories
+
+   - Copy the token (starts with `ghp_`)- **TypeScript 5.7** - Strict type safety and modern ECMAScript features- **State Filters** - Filter by All, Open, or Closed issues
+
+
+
+2. **Add to your local environment file** (already in `.gitignore`):- **Tailwind CSS 3.4** - Utility-first styling with custom design system
+
+   ```typescript
+
+   // src/environments/environment.ts- **RxJS** - Reactive programming for async operations- **Smart Pagination** - 10 issues per page with easy navigation- **Smooth Animations** - Slide-up, fade-in, and scale effects
+
+   export const environment = {
+
+     production: false,- **Chart.js 4.5** - Beautiful data visualizations
+
+     githubApiBase: 'https://api.github.com',
+
+     githubToken: 'ghp_YOUR_TOKEN_HERE' // Paste your token- **IndexedDB (idb)** - Client-side database for offline caching- **Live Results** - See results update as you type
+
+   };
+
+   ```- **DOMPurify** - XSS protection for markdown content
+
+
+
+3. **Your token stays private** - The `environment.ts` file is in `.gitignore` and never pushed to GitHub- **GitHub API v3** - Real-time data from GitHub REST API## 🚀 Quick Start
+
+
+
 ---
 
-## 📦 Build & Deployment
 
-- **Statistics Cards** - Total, Open, Closed issues, and Average Comments
+
+## 📦 Build & Deployment---### 📊 Interactive Dashboard
+
+
 
 ### Build for Production
 
-## 🛠️ Installation & Development
 
-```powershell
 
-# Standard production build- **Repository Switcher** - Explore popular repositories```powershell
+```powershell## 🚀 Quick Start- **Statistics Cards** - View Total, Open, Closed issues, and Average Comments### 🔍 Powerful Search & Filtering
+
+# Standard production build
 
 npm run build
 
-```bash
-
-# Output: dist/github-issue-explorer/browser/
-
-```# Clone the repository- **Issue Detail Modal** - Click any issue to see full details# Install dependencies
 
 
-
-### Deploy to GitHub Pagesgit clone https://github.com/bsse23094/issue-beacon.git
-
-
-
-```powershell- **Direct GitHub Links** - Open issues directly on GitHubnpm install
-
-# Build with correct base href
-
-npm run build -- --base-href=/issue-beacon/# Navigate to project directory
-
-
-
-# Deploy to gh-pages branchcd issue-beacon
-
-npx angular-cli-ghpages --dir=dist/github-issue-explorer/browser
+# Output: dist/github-issue-explorer/browser/### Prerequisites- **Repository Switcher** - Explore popular repositories (React, Vue, Angular, VS Code, TensorFlow)
 
 ```
 
+- **Node.js** 18+ and npm
 
+### Deploy to GitHub Pages
 
-Your app will be live at **https://bsse23094.github.io/issue-beacon/**# Install dependencies## 🚀 Quick Start# Start the development server
-
-
-
-### Deploy to Vercelnpm install
-
-
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/bsse23094/issue-beacon)npm start
-
-
-
-Or manually:# Start development server
-
-
-
-```powershellnpm start```bash```
-
-npm install -g vercel
-
-vercel --prod```
-
-```
-
-git clone https://github.com/bsse23094/issue-beacon.git
-
-### Deploy to Netlify
-
-Visit `http://localhost:4200` in your browser.
+- **Git**- **Issue Detail Modal** - Click any issue to see full details in a beautiful modal- **Real-time Search** - Search through issue titles and descriptions### Prerequisites
 
 ```powershell
 
-npm run buildcd issue-beaconThe app will be available at **http://localhost:4200/**
+# Build with correct base href- (Optional) **GitHub Personal Access Token** for higher rate limits
 
-# Deploy dist/github-issue-explorer/browser/ folder via Netlify UI or CLI
+npm run build -- --base-href=/issue-beacon/
 
-```---
+- **Direct GitHub Links** - Open issues directly on GitHub with one click
+
+# Deploy to gh-pages branch
+
+npx angular-cli-ghpages --dir=dist/github-issue-explorer/browser### Installation
+
+```
+
+- **State Filters** - Filter by All, Open, or Closed issues
+
+Your app will be live at **https://YOUR_USERNAME.github.io/issue-beacon/**
+
+```powershell
+
+### Deploy to Vercel
+
+# Clone the repository### 🚀 Technical Highlights
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/bsse23094/issue-beacon)
+
+git clone https://github.com/bsse23094/issue-beacon.git
+
+Or manually:
+
+- Built with **Angular 19** (Latest Standalone Components)- **Smart Pagination** - 10 issues per page with navigation- Node.js 18+ and npm
+
+```powershell
+
+npm install -g vercel# Navigate to project directory
+
+vercel --prod
+
+```cd issue-beacon- **Tailwind CSS** for utility-first styling
 
 
 
----npm install
+### Deploy to Netlify
 
 
 
-## 📖 Usage Guide## 🚀 Deployment
+```powershell# Install dependencies- **GitHub API Integration** for real-time data- **Live Results** - See results update as you type- Git
 
+npm run build
 
+# Deploy dist/github-issue-explorer/browser/ folder via Netlify UI or CLInpm install
 
-### Browse Issuesnpm start### Build for Production
+```
 
+- **Responsive Design** - Works perfectly on all devices
 
+---
 
-1. Enter a repository **owner** (e.g., `facebook`) and **repository name** (e.g., `react`)### GitHub Pages (Current)
+# Start development server
 
-2. Use filters to refine your search:
+## 📖 Usage Guide
 
-   - **State**: Open, Closed, or All issuesThe app is automatically deployed to GitHub Pages via GitHub Actions on every push to master.```
+npm start- **TypeScript** for type safety
 
-   - **Sort By**: Created, Updated, or Comments
+### Browse Issues
+
+```
+
+1. Enter a repository **owner** (e.g., `facebook`) and **repository name** (e.g., `react`)
+
+2. Use filters to refine your search:- **RxJS** for reactive programming
+
+   - **State**: Open, Closed, or All issues
+
+   - **Sort By**: Created, Updated, or CommentsVisit **http://localhost:4200/** 🎉
 
    - **Direction**: Newest or Oldest first
 
-   - **Labels**: Comma-separated (e.g., `bug,enhancement`)
+   - **Labels**: Comma-separated (e.g., `bug,enhancement`)### 📊 Interactive Dashboard### Installation
 
-3. Click any issue to view full details with markdown-rendered description and comments```bash```powershell
+3. Click any issue to view full details with markdown-rendered description and comments
 
-4. Use pagination controls to navigate through results
+4. Use pagination controls to navigate through results---
 
-# Manual deployment
 
-### Repository Statistics
 
-npm run build -- --base-href=/issue-beacon/Visit `http://localhost:4200` 🎉npm run build
+### Repository Statistics---
 
-1. Navigate to the **Repository** tab
 
-2. View comprehensive stats including:npx angular-cli-ghpages --dir=dist/github-issue-explorer/browser
 
-   - Star count, forks, watchers, and open issues
+1. Navigate to the **Repository** tab## 📦 Build & Deployment
 
-   - Language distribution donut chart``````
+2. View comprehensive stats including:
 
-   - Top contributors bar chart
+   - Star count, forks, watchers, and open issues- **Statistics Cards** - Total, Open, Closed issues, and Average Comments
+
+   - Language distribution donut chart
+
+   - Top contributors bar chart### Build for Production
 
    - Repository metadata (topics, license, creation date)
 
+## 🛠️ Installation & Development
 
+### Commit History
 
-### Commit History### Vercel## 📦 Deployment
+```powershell
 
+1. Go to the **Commits** tab
 
+2. Explore:# Standard production build- **Repository Switcher** - Explore popular repositories```powershell
 
-1. Go to the **Commits** tab```bash
+   - Daily commit activity timeline (last 30 days)
 
-2. Explore:
+   - 24-hour commit frequency heatmapnpm run build
 
-   - Daily commit activity timeline (last 30 days)npm install -g vercel## 📖 Usage
+   - Total commits and weekly/monthly averages
 
-   - 24-hour commit frequency heatmap
-
-   - Total commits and weekly/monthly averagesvercel --prod
-
-   - Detailed commit list with messages, authors, and timestamps
-
-```### Vercel (Recommended - One Click)
-
-### Compare Users
+   - Detailed commit list with messages, authors, and timestamps```bash
 
 
 
-1. Navigate to the **Compare** tab
+### Compare Users# Output: dist/github-issue-explorer/browser/
 
-2. Enter two GitHub usernames### Netlify### Browse Issues
+
+
+1. Navigate to the **Compare** tab```# Clone the repository- **Issue Detail Modal** - Click any issue to see full details# Install dependencies
+
+2. Enter two GitHub usernames
 
 3. Click **Compare Users** to see:
 
-   - Profile overviews with avatars and bio```bash
+   - Profile overviews with avatars and bio
 
-   - Impact scores calculated from followers, stars, and commits
+   - Impact scores calculated from followers, stars, and commits### Deploy to GitHub Pagesgit clone https://github.com/bsse23094/issue-beacon.git
 
-   - Top 4 languages for each user with percentagesnpm run build[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/bsse23094/issue-beacon)
+   - Top 4 languages for each user with percentages
 
    - Top 3 repositories ranked by stars
 
-   - Direct metric comparison table showing deltas# Deploy dist/github-issue-explorer/browser folder
+   - Direct metric comparison table showing deltas
+
+```powershell- **Direct GitHub Links** - Open issues directly on GitHubnpm install
+
+---
+
+# Build with correct base href
+
+## 🏗️ Project Structure
+
+npm run build -- --base-href=/issue-beacon/# Navigate to project directory
+
+```
+
+src/
+
+├── app/
+
+│   ├── components/# Deploy to gh-pages branchcd issue-beacon
+
+│   │   ├── issue-list/         # Main issue browser
+
+│   │   ├── issue-detail/       # Issue detail modalnpx angular-cli-ghpages --dir=dist/github-issue-explorer/browser
+
+│   │   ├── repo-stats/         # Repository analytics
+
+│   │   ├── commit-history/     # Commit timeline & charts```
+
+│   │   └── user-compare/       # User comparison feature
+
+│   ├── services/
+
+│   │   ├── github.service.ts   # GitHub API wrapper
+
+│   │   ├── db.service.ts       # IndexedDB cachingYour app will be live at **https://bsse23094.github.io/issue-beacon/**# Install dependencies## 🚀 Quick Start# Start the development server
+
+│   │   └── theme.service.ts    # Dark/light theme switcher
+
+│   ├── app.component.ts        # Root component with navigation
+
+│   ├── app.routes.ts           # Route configuration
+
+│   └── app.config.ts           # App configuration### Deploy to Vercelnpm install
+
+├── environments/
+
+│   └── environment.template.ts # Template for environment config (copy to environment.ts)
+
+├── styles.css                  # Global styles & glassmorphism design system
+
+└── index.html                  # HTML entry point[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/bsse23094/issue-beacon)npm start
+
+```
 
 
 
----```1. Enter a repository owner (e.g., `facebook`) and repository name (e.g., `react`)
+---
+
+Or manually:# Start development server
+
+## 🎨 Design System
 
 
 
-## 🛠️ Configuration
+### Color Palette
 
+```powershellnpm start```bash```
+
+```css
+
+/* Premium Glass Variables */npm install -g vercel
+
+--glass-surface: rgba(15, 20, 32, 0.08);
+
+--glass-surface-hover: rgba(15, 20, 32, 0.13);vercel --prod```
+
+--glass-blur: blur(20px) saturate(180%);
+
+```
+
+/* Gradient Accents */
+
+--gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);git clone https://github.com/bsse23094/issue-beacon.git
+
+--gradient-success: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+
+```### Deploy to Netlify
+
+
+
+### TypographyVisit `http://localhost:4200` in your browser.
+
+
+
+- **Primary Font**: Lexend (400, 500, 600, 700)```powershell
+
+- **Accent Font**: DM Sans (400, 500, 600, 700)
+
+- **Display Font**: Instrument Sans (400, 500, 600, 700)npm run buildcd issue-beaconThe app will be available at **http://localhost:4200/**
+
+
+
+### Glass Card System# Deploy dist/github-issue-explorer/browser/ folder via Netlify UI or CLI
+
+
+
+```html```---
+
+<!-- Ultra-transparent card (5% opacity) -->
+
+<div class="glass-card">...</div>
+
+
+
+<!-- Glass alert variants -->---npm install
+
+<div class="glass-alert glass-alert--danger">...</div>
+
+<div class="glass-alert glass-alert--info">...</div>
+
+<div class="glass-alert glass-alert--success">...</div>
+
+## 📖 Usage Guide## 🚀 Deployment
+
+<!-- Premium input styling -->
+
+<input class="input-premium" />
+
+```
+
+### Browse Issuesnpm start### Build for Production
+
+---
+
+
+
+## 🧪 Testing
+
+1. Enter a repository **owner** (e.g., `facebook`) and **repository name** (e.g., `react`)### GitHub Pages (Current)
+
+```powershell
+
+# Run unit tests2. Use filters to refine your search:
+
+npm test
+
+   - **State**: Open, Closed, or All issuesThe app is automatically deployed to GitHub Pages via GitHub Actions on every push to master.```
+
+# Run e2e tests
+
+npm run e2e   - **Sort By**: Created, Updated, or Comments
+
+
+
+# Run tests with coverage   - **Direction**: Newest or Oldest first
+
+npm run test:coverage
+
+```   - **Labels**: Comma-separated (e.g., `bug,enhancement`)
+
+
+
+---3. Click any issue to view full details with markdown-rendered description and comments```bash```powershell
+
+
+
+## 📊 Technology Stack4. Use pagination controls to navigate through results
+
+
+
+| Category | Technologies |# Manual deployment
+
+|----------|-------------|
+
+| **Framework** | Angular 19.2.0 |### Repository Statistics
+
+| **Language** | TypeScript 5.7.2 |
+
+| **Styling** | Tailwind CSS 3.4.18, Custom CSS Variables |npm run build -- --base-href=/issue-beacon/Visit `http://localhost:4200` 🎉npm run build
+
+| **State Management** | RxJS 7.8.0 |
+
+| **HTTP** | Angular HttpClient |1. Navigate to the **Repository** tab
+
+| **Charts** | Chart.js 4.5.1 |
+
+| **Markdown** | Marked 16.0.0 |2. View comprehensive stats including:npx angular-cli-ghpages --dir=dist/github-issue-explorer/browser
+
+| **Security** | DOMPurify 3.2.6 |
+
+| **Storage** | IndexedDB (idb 8.0.3) |   - Star count, forks, watchers, and open issues
+
+| **Deployment** | angular-cli-ghpages 2.0.3 |
+
+   - Language distribution donut chart``````
+
+---
+
+   - Top contributors bar chart
+
+## 🤝 Contributing
+
+   - Repository metadata (topics, license, creation date)
+
+Contributions are welcome! Please follow these steps:
+
+
+
+1. Fork the repository
+
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)### Commit History### Vercel## 📦 Deployment
+
+3. Copy `environment.template.ts` to `environment.ts` for local development
+
+4. Commit your changes (`git commit -m 'Add amazing feature'`)
+
+5. Push to the branch (`git push origin feature/amazing-feature`)
+
+6. Open a Pull Request1. Go to the **Commits** tab```bash
+
+
+
+**Note**: Never commit `environment.ts` or `environment.prod.ts` - they're in `.gitignore` to protect tokens!2. Explore:
+
+
+
+---   - Daily commit activity timeline (last 30 days)npm install -g vercel## 📖 Usage
+
+
+
+## 📝 License   - 24-hour commit frequency heatmap
+
+
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.   - Total commits and weekly/monthly averagesvercel --prod
+
+
+
+---   - Detailed commit list with messages, authors, and timestamps
+
+
+
+## 👤 Author```### Vercel (Recommended - One Click)
+
+
+
+**Ahmed Ayyan**  ### Compare Users
+
+GitHub: [@bsse23094](https://github.com/bsse23094)
+
+
+
+---
+
+1. Navigate to the **Compare** tab
+
+## 🙏 Acknowledgments
+
+2. Enter two GitHub usernames### Netlify### Browse Issues
+
+- [Angular Team](https://angular.io/) - For the amazing framework
+
+- [Tailwind CSS](https://tailwindcss.com/) - For the utility-first CSS framework3. Click **Compare Users** to see:
+
+- [Chart.js](https://www.chartjs.org/) - For beautiful charts
+
+- [GitHub API](https://docs.github.com/en/rest) - For comprehensive API documentation   - Profile overviews with avatars and bio```bash
+
+- [Heroicons](https://heroicons.com/) - For beautiful SVG icons
+
+   - Impact scores calculated from followers, stars, and commits
+
+---
+
+   - Top 4 languages for each user with percentagesnpm run build[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/bsse23094/issue-beacon)
+
+## 🔮 Future Enhancements
+
+   - Top 3 repositories ranked by stars
+
+- [ ] Organization analytics
+
+- [ ] Pull request tracking   - Direct metric comparison table showing deltas# Deploy dist/github-issue-explorer/browser folder
+
+- [ ] Advanced search with regex support
+
+- [ ] Custom dashboard widgets
+
+- [ ] Export data to CSV/JSON
+
+- [ ] Real-time notifications via webhooks---```1. Enter a repository owner (e.g., `facebook`) and repository name (e.g., `react`)
+
+- [ ] Multi-repository comparison
+
+- [ ] Contribution heatmap calendars
+
+
+
+---## 🛠️ Configuration
+
+
+
+**Built with ❤️ using Angular 19**
 
 
 ### GitHub API Rate Limits---Or manually:2. Use the filters to refine your search:
