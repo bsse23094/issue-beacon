@@ -1,6 +1,9 @@
-IssueBeacon GitHub Issue Explorer
+<div align="center">
 
+# ✨ IssueBeacon  
+### GitHub Issue Explorer
 
+</div>
 
 **ILLUMINATE YOUR CODEBASE** - A premium GitHub analytics platform built with Angular 19
 
