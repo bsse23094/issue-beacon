@@ -30,6 +30,8 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   currentRepo = 'facebook/react'; // Default repo
   loading = false;
   error = '';
+  mobileMenuOpen = false;
+  mobileMenuClosing = false;
   
   // Filtering & Pagination
   filterState: 'all' | 'open' | 'closed' = 'all';
@@ -233,5 +235,18 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
   openIssueInGithub(issue: Issue): void {
     window.open(issue.html_url, '_blank');
+  }
+
+  toggleMobileMenu(): void {
+    this.mobileMenuOpen = !this.mobileMenuOpen;
+    this.mobileMenuClosing = false;
+  }
+
+  closeMobileMenu(): void {
+    this.mobileMenuClosing = true;
+    setTimeout(() => {
+      this.mobileMenuOpen = false;
+      this.mobileMenuClosing = false;
+    }, 300); // Match animation duration
   }
 }
